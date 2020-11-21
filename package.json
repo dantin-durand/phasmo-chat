@@ -1,6 +1,6 @@
 {
   "name": "tp-xpress",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Un site de chat sur le thème du jeu phasmophobia",
   "main": "app.js",
   "scripts": {

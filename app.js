@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const urlencoderParser = bodyParser.urlencoded({ extended: false})
 
 const app = express()
-app.use(helmet())
+// app.use(helmet())
 app.use(express.static('public'))
 
 
