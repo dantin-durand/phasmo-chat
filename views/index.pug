@@ -1,0 +1,15 @@
+html
+    head
+        title Accueil
+        include includes/head.pug
+        link(rel="stylesheet", href="/css/home.css")
+    body
+        include includes/nav.pug
+        div(class="jumbotron phasmo-header")
+            div
+                img(src="./img/logo.png")
+                p(class="lead") Apportez un nouvel outil à vos chasse nocturne.
+                br
+                a(class="btn btn-phasmo btn-lg", href="/chat") Chatter
+        div(class="loader")
+        include includes/script.pug

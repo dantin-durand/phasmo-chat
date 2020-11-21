@@ -1,0 +1,20 @@
+html
+    head
+        title Inscription
+        include includes/head.pug
+    body(class="sign-page signup")
+        include includes/nav.pug
+        div(class="form-sign col-sm-10 col-md-3")
+            h1 Inscription
+            form(action="/signup", method="post")
+                div(class="form-group")
+                    label(for="email")
+                    input(type="email", name="email", placeholder="E-mail",id="email" ,aria-describedby="Adresse mail", class="form-control")
+                div(class="form-group")
+                    label(for="password")
+                    input(type="password", name="password", placeholder="Mot de passe", id="password", class="form-control")
+                a(href="/signin") Vous avez déjà un compte ?
+                br
+                button(type="submit" class="btn btn-phasmo") S'incrire
+        div(class="loader")
+        include includes/script.pug

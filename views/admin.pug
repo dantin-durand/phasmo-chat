@@ -1,0 +1,18 @@
+html
+    head
+        title Admin
+        include includes/head.pug
+    body
+        include includes/nav.pug
+        div(class="container")
+            h1 Admin
+            br
+            p Liste des utilisateurs:
+            ul(class="list-group list-group-flush list-user")
+                li(class="list-group-item") <b>#1</b> Cocona
+                li(class="list-group-item") <b>#2</b> Alyss
+                li(class="list-group-item") <b>#3</b> Dapprima
+                li(class="list-group-item") <b>#4</b> Weykee
+                li(class="list-group-item") <b>#5</b> Golden_Vinyle
+        div(class="loader")
+        include includes/script.pug

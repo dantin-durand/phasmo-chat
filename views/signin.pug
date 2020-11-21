@@ -1,0 +1,20 @@
+html
+    head
+        title Connexion
+        include includes/head.pug
+    body(class="sign-page signin")
+        include includes/nav.pug
+        div(class="form-sign col-sm-10 col-md-3")
+            h1 Connexion
+            form(action="/signin", method="post")
+                div(class="form-group")
+                    label(for="email")
+                    input(type="email", name="email", placeholder="E-mail",id="email" ,aria-describedby="Adresse mail", class="form-control")
+                div(class="form-group")
+                    label(for="password")
+                    input(type="password", name="password", placeholder="Mot de passe", id="password", class="form-control")
+                a(href="/signup") Vous n'avez pas de compte ?
+                br
+                button(type="submit" class="btn btn-phasmo") Se connecter
+        div(class="loader")
+        include includes/script.pug
