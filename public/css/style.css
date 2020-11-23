@@ -201,6 +201,16 @@ p {
 .list-user > .list-group-item > b{
     padding-right: 10px;
 }
+.list-user a {
+    color: white;
+    transition: all 0.2s ease-in;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.list-user a:hover {
+    color: var(--red);
+}
 
 /* ---------------- [5] 404 ---------------- */
 

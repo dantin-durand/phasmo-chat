@@ -9,10 +9,10 @@ html
             form(action="/signup", method="post")
                 div(class="form-group")
                     label(for="email")
-                    input(type="email", name="email", placeholder="E-mail",id="email" ,aria-describedby="Adresse mail", class="form-control")
+                    input(type="email", name="email", placeholder="E-mail",id="email" ,aria-describedby="Adresse mail", class="form-control", required)
                 div(class="form-group")
                     label(for="password")
-                    input(type="password", name="password", placeholder="Mot de passe", id="password", class="form-control")
+                    input(type="password", name="password", placeholder="Mot de passe", id="password", class="form-control", required)
                 a(href="/signin") Vous avez déjà un compte ?
                 br
                 button(type="submit" class="btn btn-phasmo") S'incrire
