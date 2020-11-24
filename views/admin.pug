@@ -9,30 +9,11 @@ html
             br
             p Liste des utilisateurs:
             ul(class="list-group list-group-flush list-user")
-                li(class="list-group-item") <b>#1</b> Cocona
-                    a(class="float-right", href="/delete")
-                        i(class="fas fa-trash-alt")
-                    a(class="float-right", href="/delete")
-                        i(class="fas fa-edit")
-                li(class="list-group-item") <b>#2</b> Alyss
-                    a(class="float-right", href="/delete")
-                        i(class="fas fa-trash-alt")
-                    a(class="float-right", href="/delete")
-                        i(class="fas fa-edit")
-                li(class="list-group-item") <b>#3</b> Dapprima
-                    a(class="float-right", href="/delete")
-                        i(class="fas fa-trash-alt")
-                    a(class="float-right", href="/delete")
-                        i(class="fas fa-edit")
-                li(class="list-group-item") <b>#4</b> Weykee
-                    a(class="float-right", href="/delete")
-                        i(class="fas fa-trash-alt")
-                    a(class="float-right", href="/delete")
-                        i(class="fas fa-edit")
-                li(class="list-group-item") <b>#5</b> Golden_Vinyle
-                    a(class="float-right", href="/delete")
-                        i(class="fas fa-trash-alt")
-                    a(class="float-right", href="/delete")
-                        i(class="fas fa-edit")
+                - for (const key in users)
+                    li(class="list-group-item") <b>##{ users[key].id }</b> #{ users[key].username }
+                        a(class="float-right", href="/delete")
+                            i(class="fas fa-trash-alt")
+                        a(class="float-right", href="/delete")
+                            i(class="fas fa-edit")
         div(class="loader")
         include includes/script.pug

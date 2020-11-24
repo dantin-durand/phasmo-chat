@@ -10,9 +10,15 @@ html
                 div(class="form-group")
                     label(for="email")
                     input(type="email", name="email", placeholder="E-mail",id="email" ,aria-describedby="Adresse mail", class="form-control", required)
+
+                div(class="form-group")
+                    label(for="username")
+                    input(type="text", name="username", placeholder="Pseudo",id="username" ,aria-describedby="Pseudo", class="form-control", required)
+
                 div(class="form-group")
                     label(for="password")
                     input(type="password", name="password", placeholder="Mot de passe", id="password", class="form-control", required)
+                    
                 a(href="/signin") Vous avez déjà un compte ?
                 br
                 button(type="submit" class="btn btn-phasmo") S'incrire

@@ -4,6 +4,9 @@ const bodyParser = require('body-parser')
 
 const urlencoderParser = bodyParser.urlencoded({ extended: false})
 
+const { User } = require('./models')
+const { Op } = require('sequelize')
+
 const app = express()
 // app.use(helmet())
 app.use(express.static('public'))
@@ -26,11 +29,27 @@ app.get('/signup', (req, res) => {
     res.render('signup.pug')
 })
 // Page d'inscription [POST]
-app.post('/signup', urlencoderParser, (req, res) => {
-    console.log('');
-    console.log('POST/signup -> Email:', req.body.email);
-    console.log('POST/signup -> Password:', req.body.password);
-    res.render('signup.pug')
+app.post('/signup', urlencoderParser, async (req, res) => {
+    try {
+        console.log('POST/signup -> Email:', req.body);
+        const { email, username, password } = req.body
+        const [user, created] = await User.findOrCreate({
+            where: { [Op.or]: [{email}, {username}] },
+            defaults: {
+                email,
+                username,
+                password,
+                isAdmin: true
+            },
+        })
+        if(!created) {
+            return res.status(400).render('signup.pub')
+        }
+        console.log('POST/signup -> Utilisateur créé:', user);
+        res.status(200).render('signup.pug')
+    } catch (error) {
+        res.status(500).render('500.pug')
+    }
 })
 
 
@@ -48,8 +67,15 @@ app.post('/signin', urlencoderParser, (req, res) => {
 
 
 // Page admin [GET]
-app.get('/admin', (req, res) => {
-    res.render('admin.pug')
+app.get('/admin', async (req, res) => {
+    try {
+        const users = await User.findAll();
+        console.log('users ->', users)
+        res.status(200).render('admin.pug', { users })
+    } catch (error) {
+        console.error(error)
+        res.status(500).render('500.pug')
+    }
 })
 
 

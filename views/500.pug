@@ -1,0 +1,14 @@
+html
+    head
+        title Cette page n'existe pas
+        include includes/head.pug
+        link(rel="stylesheet", href="/css/home.css")
+    body
+        include includes/nav.pug
+        div(class="error-404")
+            div
+                h1 500
+                h3 Pic à 10, le fantôme rentre en chasse !
+                a(href='/') Retour à l'accueil
+        div(class="loader")
+        include includes/script.pug
